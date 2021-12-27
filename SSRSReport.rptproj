@@ -55,6 +55,7 @@
     <DataSource Include="SSRS.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="Practice2.rdl" />
     <Report Include="ReportWizard.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />

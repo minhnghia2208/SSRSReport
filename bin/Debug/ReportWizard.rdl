@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily" MustUnderstand="df">
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -11,16 +11,12 @@
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
-      <Query>
-        <DataSourceName>SSRS</DataSourceName>
-        <CommandText>SELECT Name AS [Product Name], ListPrice, SellStartDate AS [Sell Start Date], SellEndDate AS [Sell End Date]
-FROM     Production.Product
-ORDER BY [Product Name], ListPrice</CommandText>
-        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-      </Query>
+      <SharedDataSet>
+        <SharedDataSetReference>AdventuredWorksSharedDataset</SharedDataSetReference>
+      </SharedDataSet>
       <Fields>
         <Field Name="Product_Name">
-          <DataField>Product Name</DataField>
+          <DataField>Product_Name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="ListPrice">
@@ -28,11 +24,11 @@ ORDER BY [Product Name], ListPrice</CommandText>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Sell_Start_Date">
-          <DataField>Sell Start Date</DataField>
+          <DataField>Sell_Start_Date</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="Sell_End_Date">
-          <DataField>Sell End Date</DataField>
+          <DataField>Sell_End_Date</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
@@ -62,6 +58,7 @@ ORDER BY [Product Name], ListPrice</CommandText>
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
             <Height>0.42in</Height>
+            <Width>5in</Width>
             <Style>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -111,8 +108,6 @@ ORDER BY [Product Name], ListPrice</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox2</rd:DefaultName>
-                          <Height>0.22in</Height>
-                          <Width>1in</Width>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -154,8 +149,6 @@ ORDER BY [Product Name], ListPrice</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox3</rd:DefaultName>
-                          <Height>0.22in</Height>
-                          <Width>1in</Width>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -194,8 +187,6 @@ ORDER BY [Product Name], ListPrice</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox4</rd:DefaultName>
-                          <Height>0.22in</Height>
-                          <Width>1in</Width>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -234,8 +225,6 @@ ORDER BY [Product Name], ListPrice</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox5</rd:DefaultName>
-                          <Height>0.22in</Height>
-                          <Width>1in</Width>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -277,8 +266,6 @@ ORDER BY [Product Name], ListPrice</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Product_Name</rd:DefaultName>
-                          <Height>0.21in</Height>
-                          <Width>1in</Width>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -315,8 +302,6 @@ ORDER BY [Product Name], ListPrice</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>ListPrice</rd:DefaultName>
-                          <Height>0.21in</Height>
-                          <Width>1in</Width>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -353,8 +338,6 @@ ORDER BY [Product Name], ListPrice</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Sell_Start_Date</rd:DefaultName>
-                          <Height>0.21in</Height>
-                          <Width>1in</Width>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -391,8 +374,6 @@ ORDER BY [Product Name], ListPrice</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Sell_End_Date</rd:DefaultName>
-                          <Height>0.21in</Height>
-                          <Width>1in</Width>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -443,6 +424,9 @@ ORDER BY [Product Name], ListPrice</CommandText>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
             <Top>0.42in</Top>
+            <Height>0.43in</Height>
+            <Width>4in</Width>
+            <ZIndex>1</ZIndex>
             <Style />
           </Tablix>
         </ReportItems>
@@ -467,6 +451,6 @@ ORDER BY [Product Name], ListPrice</CommandText>
   </ReportParametersLayout>
   <Language>en-US</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
-  <rd:ReportUnitType>Invalid</rd:ReportUnitType>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>56da70e5-219c-4c25-9473-a64b304d28da</rd:ReportID>
 </Report>
